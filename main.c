@@ -1,6 +1,6 @@
 #include <stdint.h>
 #include <stm32f10x.h>
-
+"""
 #define BUTTON_ACTIVE_LOW 1
 
 #define LED_PIN     13U   /* PC13 */
@@ -68,4 +68,15 @@ int __attribute((noreturn)) main(void) {
 			GPIOC->ODR ^= (1U << LED_PIN);   /* инвертировать PC13 */
 		}
 	}
+}
+"""
+int main(void)
+{
+    SPI1_Init();
+    display_init();
+    display_chessboard();
+
+    while (1)
+    {
+    }
 }
